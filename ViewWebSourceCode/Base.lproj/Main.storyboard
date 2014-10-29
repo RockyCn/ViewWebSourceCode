@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tNN-UD-Pph">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tNN-UD-Pph">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -83,8 +83,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="tNN-UD-Pph" firstAttribute="top" secondItem="bRa-ek-qwi" secondAttribute="top" id="KDF-qJ-fph"/>
+                            <constraint firstItem="tNN-UD-Pph" firstAttribute="leading" secondItem="bRa-ek-qwi" secondAttribute="leading" id="KoQ-0g-zcF"/>
                             <constraint firstAttribute="trailing" secondItem="vPB-vl-MQF" secondAttribute="trailing" id="WES-Um-Xj5"/>
                             <constraint firstItem="vPB-vl-MQF" firstAttribute="leading" secondItem="bRa-ek-qwi" secondAttribute="leading" id="abt-HY-byK"/>
+                            <constraint firstAttribute="trailing" secondItem="tNN-UD-Pph" secondAttribute="trailing" id="dsS-II-8wV"/>
+                            <constraint firstItem="m5l-II-LJH" firstAttribute="top" secondItem="tNN-UD-Pph" secondAttribute="bottom" id="kfh-13-qUy"/>
                             <constraint firstItem="vPB-vl-MQF" firstAttribute="top" secondItem="9hM-aO-Ac4" secondAttribute="bottom" id="zh4-Uf-ZVq"/>
                         </constraints>
                     </view>

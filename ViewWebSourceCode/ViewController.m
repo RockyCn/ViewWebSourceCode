@@ -23,9 +23,21 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+
+    NSString *currentUrl = @"baidu.com";
+    [self loadRequestFromString:currentUrl];
+
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
-    [self loadRequestFromString:@"http://baidu.com"];
-    //    [self showBaseView:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,6 +48,13 @@
 
 - (void)loadRequestFromString:(NSString*)urlString
 {
+    if (![urlString hasPrefix:@"http://"])
+    {
+        urlString = [[NSString alloc] initWithFormat:@"http://%@", urlString];
+    }
+
+    self.webLink.text = urlString;
+    
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:urlRequest];
@@ -62,10 +81,7 @@
     [self.baseView setHidden:YES];
     
     NSString *newLink = self.webLink.text;
-    if (![newLink hasPrefix:@"http://"])
-    {
-        newLink = [[NSString alloc] initWithFormat:@"http://%@", self.webLink.text];
-    }
+
     
     [self loadRequestFromString:newLink];
     
@@ -98,5 +114,4 @@
     [self.alertView dismissWithClickedButtonIndex:0
                                          animated:YES];
 }
-
 @end

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="iBP-mj-3La">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller - View Source-->
+        <scene sceneID="OEs-k9-LfG">
+            <objects>
+                <viewController id="dxq-bT-xj7" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9hM-aO-Ac4"/>
+                        <viewControllerLayoutGuide type="bottom" id="m5l-II-LJH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bRa-ek-qwi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tNN-UD-Pph">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="dxq-bT-xj7" id="WzJ-JC-5Nw"/>
+                                </connections>
+                            </webView>
+                            <view hidden="YES" alpha="0.94999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPB-vl-MQF">
+                                <rect key="frame" x="0.0" y="64" width="320" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cye-h1-snn">
+                                        <rect key="frame" x="10" y="5" width="245" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="URL"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKE-Sa-uDE">
+                                        <rect key="frame" x="268" y="4" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Go">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loadNewLink:" destination="dxq-bT-xj7" eventType="touchUpInside" id="ZER-A1-KNi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="BZw-g7-OQy"/>
+                                    <constraint firstAttribute="height" constant="40" id="iRL-JR-jct"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vPB-vl-MQF" secondAttribute="trailing" id="WES-Um-Xj5"/>
+                            <constraint firstItem="vPB-vl-MQF" firstAttribute="leading" secondItem="bRa-ek-qwi" secondAttribute="leading" id="abt-HY-byK"/>
+                            <constraint firstItem="vPB-vl-MQF" firstAttribute="top" secondItem="9hM-aO-Ac4" secondAttribute="bottom" id="zh4-Uf-ZVq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="View Source" id="6t8-Nj-d2x">
+                        <barButtonItem key="leftBarButtonItem" title="Show" id="gqc-EW-JkZ">
+                            <connections>
+                                <action selector="showBaseView:" destination="dxq-bT-xj7" id="e3o-Ks-wLq"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Copy" id="rv5-t5-2cv">
+                            <connections>
+                                <action selector="copySource:" destination="dxq-bT-xj7" id="qvR-EX-MZA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="baseView" destination="vPB-vl-MQF" id="cP0-l4-N6J"/>
+                        <outlet property="leftButton" destination="gqc-EW-JkZ" id="ezN-Qj-0te"/>
+                        <outlet property="webLink" destination="Cye-h1-snn" id="8W8-KS-xa6"/>
+                        <outlet property="webView" destination="tNN-UD-Pph" id="Eu0-FK-avj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I1C-U8-1OC" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="680" y="800"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lRj-6K-NxV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iBP-mj-3La" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yzg-OG-mG4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dxq-bT-xj7" kind="relationship" relationship="rootViewController" id="TPK-vP-heK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SWi-hG-SZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="158" y="800"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
